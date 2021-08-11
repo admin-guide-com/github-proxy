@@ -1,11 +1,19 @@
 import { Router } from "itty-router";
 
+const INDEX_PAGE = `<pre>https://github-proxy.marcelcoding.workers.dev/<github-release-asset-url>
+https://github-proxy.marcelcoding.workers.dev/https://github.com/traefik/traefik/releases/download/v2.4.13/traefik-v2.4.13.src.tar.gz
+
+https://github-proxy.marcelcoding.workers.dev/<account>/<repo>/<version>/<file>
+https://github-proxy.marcelcoding.workers.dev/traefik/traefik/v2.4.13/traefik-v2.4.13.src.tar.gz</pre>`;
+
 const errorHandler = (error) =>
   new Response(error.message || "Server Error", {
     status: error.status || 500,
   });
 
 const router = Router();
+
+router.get("/", () => new Response(INDEX_PAGE));
 
 // https://github.com/traefik/traefik/releases/download/v2.4.13/traefik-v2.4.13.src.tar.gz
 

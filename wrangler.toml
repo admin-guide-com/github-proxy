@@ -1,0 +1,4 @@
+type = "webpack"
+workers_dev = true
+account_id = "2a09613716e511a8fe8ca74abc084762"
+name = "github-proxy"
